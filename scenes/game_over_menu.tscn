@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0vhywhn78eic"]
+
+[ext_resource type="FontFile" uid="uid://c8hte840ehi2e" path="res://art/MaldiniBold.ttf" id="1_6ebp1"]
+[ext_resource type="Script" uid="uid://1fbck71wybyo" path="res://scenes/game_over_menu.gd" id="1_cwb3k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwb3k"]
+bg_color = Color(0.188833, 0.1826, 0.22, 1)
+shadow_size = 5
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccgoi"]
+bg_color = Color(0.592157, 0.466667, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81acl"]
+bg_color = Color(0.592157, 0.466667, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u104"]
+bg_color = Color(0.492743, 0.3901, 0.83, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvr4g"]
+bg_color = Color(0.492743, 0.3901, 0.83, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csn76"]
+bg_color = Color(0.40963, 0.3243, 0.69, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8pbw"]
+bg_color = Color(0.592157, 0.466667, 1, 1)
+
+[node name="GameOverMenu" type="CanvasLayer"]
+script = ExtResource("1_cwb3k")
+
+[node name="GameOVerPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -175.0
+offset_right = 200.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cwb3k")
+
+[node name="ResultLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -121.0
+offset_right = 117.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_6ebp1")
+theme_override_font_sizes/font_size = 52
+text = "GAME OVER!"
+
+[node name="RestartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = 50.0
+offset_right = 120.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_6ebp1")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/focus = SubResource("StyleBoxFlat_ccgoi")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_81acl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7u104")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mvr4g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_csn76")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k8pbw")
+text = "Play Again"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

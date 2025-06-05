@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://m351vtlpxxb0"]
+
+[ext_resource type="FontFile" uid="uid://c8hte840ehi2e" path="res://art/MaldiniBold.ttf" id="1_ahhtf"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oo0fn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ysmq"]
+bg_color = Color(0.590476, 0.466546, 1, 1)
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="ScorePanel" type="Panel" parent="."]
+material = SubResource("CanvasItemMaterial_oo0fn")
+custom_minimum_size = Vector2(10, 0)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ysmq")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_right = 65.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 35
+text = "SCORE: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -210.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 35
+text = "HIGH SCORE: 0"
+vertical_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1000.0
+offset_right = -850.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 35
+text = "SNAKE!"
+horizontal_alignment = 1
+vertical_alignment = 1
